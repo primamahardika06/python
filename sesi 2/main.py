@@ -68,39 +68,52 @@ print("****************************")
 
 while True :
     benar = random.randint(1,4)
-    
+
     bentuk_kotak = "|_|"
     kotak_kosong = [bentuk_kotak] * 4
     kotak = kotak_kosong.copy()
     kotak[benar - 1] = "|😺|"
-    
-    
-    
+
+
     nama = input("Masukkan namamu: ")
     print (f'''
     Hallo {nama}! Coba Perhatikan Kotak di Bawah!
     {"".join(kotak_kosong)} 
     ''')
-    tebakan = int(input("Menurutmu dimana aku berada? 1/2/3/4: "))
-        
-    while True :
-        tanya = input(f"Apakah kamu yakin memilih nomor {tebakan} [y/t]: ")
-        if tanya != 'y':
-            tebakan = int(input("Menurutmu dimana aku berada? 1/2/3/4: "))
+
+    while True:
+        tebakan = int(input("Menurutmu dimana aku berada? 1/2/3/4: "))
+
+    
+        while True :
+            tanya = input(f"Apakah kamu yakin memilih nomor {tebakan} [y/n]: ")
+            if tanya.lower() == 'n':
+                break
+            elif tanya.lower() == 'y':
+                if tebakan == benar:
+                    print(f" hore kamu menemukan aku \n {"".join(kotak)} \n Selamat {nama} kamu benar, aku berada di nomor {benar}! ")
+                else :
+                    print(f" yah salah, coba tebak lagi \n {"".join(kotak)}  \n Salah! Aku berada di nomor {benar}")
+                    break
+            else:
+                print("input salah")
+                
+        if tanya.lower() == 'n':
+            continue
         else:
             break
-        
+    
             
-    if tebakan == benar:
-        print(f" hore kamu menemukan aku \n {"".join(kotak)} \n Selamat {nama} kamu benar, aku berada di nomor {benar}! ")
+    while True :  
+        reset = input("Apakah kamu mau mengulangin permainan, jika iya ketika 'yes', jika tidak ketik 'no': ")
+        if reset.lower() == 'yes' :
+            break 
+        elif reset.lower() == 'no' :
+            print("Game Selesai")
+            exit()
+        else:
+            print("Masukkan perintah dengan benar 'Yes' atau 'No' ")
         
-    else :
-        print(f" yah salah, coba tebak lagi \n {"".join(kotak)}  \n Salah! Aku berada di nomor {benar}")
-        
-    reset = input("Apakah kamu mau mengulangin permainan, jika iya ketika 'Ulang': ")
-    if reset.lower() != 'ulang' :
-        print("Game Selesai")
-        break
 
 
 
