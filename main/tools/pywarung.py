@@ -30,10 +30,20 @@ def reset():
 def delete():
     id_barang = int(input("\n Masukkan id brang yang ingin dihapus: "))
     db.delete_item(id_barang)
+
+def update():
+    id_barang = int(input("\n Masukkan ID barang yang ingin di-update: "))
+    kode_baru = input(" Masukkan kode barang baru: ")
+    nama_baru = input(" Masukkan nama barang baru: ")
+    harga_baru = int(input(" Masukkan harga barang baru: "))
+    stok_baru = int(input(" Masukkan stok barang baru: "))
+
+    db.update_barang(kode_baru, nama_baru, harga_baru, stok_baru, id_barang)
+    
     
 def start(): 
     while True: 
-        menu = int(input("\n Opsi pilihan: \n 1). Tambah barang \n 2). Cek barang \n 3). Reset Barang \n 4). Delete Barang \n 5). Kembali \n Silahakan pilih: "))
+        menu = int(input("\n Opsi pilihan: \n 1). Tambah barang \n 2). Cek barang \n 3). Reset Barang \n 4). Delete Barang \n 5). Update \n 6). Kembali \n Silahakan pilih: "))
         if menu == 1:
             add()
         elif menu == 2:
@@ -43,6 +53,8 @@ def start():
         elif menu == 4:
             delete()
         elif menu == 5:
+            update()
+        elif menu == 6:
             main.menu()
         else:
             print("Hanya dapat memilih opsi diatas")

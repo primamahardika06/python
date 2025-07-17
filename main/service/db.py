@@ -7,12 +7,13 @@ db = mysql.connector.connect(
     database = 'pywarung'
 )
 
+
 def reset_barang():
     cursor = db.cursor()
     cursor.execute("DELETE FROM tbl_barang")
     cursor.execute("ALTER TABLE tbl_barang AUTO_INCREMENT = 1")
     db.commit()
-    print("\n Semua barang berhasil dihapus dan ID direset.")
+    print("\n Semua data berhasil dihapus dan ID direset.")
   
   
     
@@ -21,9 +22,9 @@ def delete_item(id_barang):
     cursor.execute("DELETE FROM tbl_barang WHERE id = %s", (id_barang,))
     db.commit()
     if cursor.rowcount > 0:
-        print("\n Barang berhasil dihapus.")
+        print("\n Data berhasil dihapus.")
     else:
-        print("\n Barang dengan ID tersebut tidak ditemukan.")
+        print("\n Data dengan ID tersebut tidak ditemukan.")
         
 
 
@@ -42,3 +43,14 @@ def fetch_item():
     cursor = db.cursor()
     cursor.execute("SELECT * FROM tbl_barang")
     return cursor.fetchall()
+
+
+
+def update_barang(kode_baru, nama_baru, harga_baru,  stok_baru, id_barang):
+    cursor = db.cursor()
+    cursor.execute("UPDATE tbl_barang SET kode_barang = %s, nama_barang = %s,  harga_barang = %s, stok_barang = %s  WHERE id = %s", (kode_baru, nama_baru, harga_baru,  stok_baru, id_barang))
+    db.commit()
+    if cursor.rowcount > 0:
+        print("\n Data baru berhasil ditambahkan")
+    else:
+        print("\n Data baru gagal ditambahkan")
