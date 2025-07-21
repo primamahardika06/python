@@ -3,7 +3,7 @@ from time import sleep
                
 def menu():
     while True: 
-        opsi = int(input("Pilih perhitungan yang anda inginkan: \n 1). Penjumlahan \n 2). Pengurangan \n 3). Perkalian \n 4). Pembagian \n Opsi pilihan: "))
+        opsi = int(input("Pilih opsi berikut \n 1). Penjumlahan \n 2). Pengurangan \n 3). Perkalian \n 4). Pembagian \n Opsi pilihan: "))
         
         if opsi == 1:
             number = int(input("Angka pertama: "))
