@@ -1,6 +1,5 @@
 from time import sleep        
-        
-               
+
 def menu():
     while True: 
         opsi = int(input("Pilih opsi berikut \n 1). Penjumlahan \n 2). Pengurangan \n 3). Perkalian \n 4). Pembagian \n Opsi pilihan: "))

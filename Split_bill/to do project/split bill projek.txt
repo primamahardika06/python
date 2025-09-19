@@ -1,0 +1,27 @@
+**split bill projek**
+
+day 1
+-algoritma split.py
+	input barang -> masukkan jumlah orang -> tanya apakah ingin tambah orang lagi -> harga barang -> output barang, jumlah, harga 
+	-> input validasi (y/n) -> munculkan harga split
+
+day 2
+-ubah input jumlah menjadi nama orang (jadi nanti nama itu akan diibaratkan angka, jadi nambah nama maka total org yg split bill bertambah)
+-tambah barang dan tambah harga masing masing barang
+
+day 3
+-buat pesenan berbeda tiap user
+-rapikan output
+
+day 4
+-memperbaiki loop ulang program
+-menambah kuantitas pada pesanan berbeda
+-bertanya dlu split dengan berapa orang baru input nama
+
+day 5
+-tanya beli berapa barang,  masukkan jenis barangnya, masukkan kuantitas masing masing barang
+
+
+
+
+

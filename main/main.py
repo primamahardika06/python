@@ -1,6 +1,14 @@
 from library import welcome_message, exit_program
 from games import pygame 
 from tools import pywarung
+import os
+
+
+if __name__ == "__main__":
+    sistem_operasi = os.name    
+
+    match sistem_operasi:
+       case "nt" : os.system("cls")
 
 def menu():
     while True:
@@ -33,9 +41,9 @@ def menu():
 def main():
     welcome_message() 
     menu()
-    
+
 if __name__ == "__main__":
     main()
-
-
+    
+ 
             

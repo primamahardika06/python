@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>Cek Usia</title>
+</head>
+<body>
+    <div class="tabel_usia">
+        <h1>Website Pengecekan Usia</h1>
+        <form method="POST" action="/usia">
+            <label for="">Masukkan tahun lahir</label>
+            <input type="number" placeholder="Masukkan tahun lahir anda..." name="tahun_lahir">
+            <br>
+            <button type="submit">Hitung Usia</button>    
+        </form>
+
+        {% if usia is not none %}
+            <p>Usia anda adalah {{usia}} tahun</p>
+        {% endif %}
+
+        <a href="/">Kembali ke home</a>
+    </div>
+</body>
+</html>

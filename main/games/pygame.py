@@ -20,7 +20,6 @@ def start():
                 break
             else: 
                 player_chose = int(input("\nInput angka dengan benar: "))
-            
     
         if player_chose == random_chose:
             print(f"\nSelamat kamu menang, aku berada di kotak {random_chose} \n\n {kotak_isi} ") 
